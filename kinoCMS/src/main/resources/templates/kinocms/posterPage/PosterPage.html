@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <div th:insert="kinocms/UserTemplates::head(Poster)"></div>
+    <script src="kinocms/js/posterPage/PosterPage.js"></script>
+</head>
+
+<body class="bg-dark" id="userBody">
+<br>
+
+
+<div th:insert="kinocms/UserTemplates::userHeader"></div>
+<div class="bg-white container">
+    <div class="row">
+        <div class="col">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary active">
+                    <input type="radio" name="options" id="userMoviesCurrent" autocomplete="off" checked> Афиша
+                </label>
+                <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="userMoviesFuture" autocomplete="off"> Скоро
+                </label>
+            </div>
+
+            <div class="row my-3" id="movies"></div>
+        </div>
+    </div>
+    <div th:insert="kinocms/UserTemplates::footer"></div>
+</div>
+</body>
+</html>

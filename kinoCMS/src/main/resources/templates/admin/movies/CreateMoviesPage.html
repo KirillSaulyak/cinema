@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <div th:insert="admin/AdminCommonHeadTemplate::head(CreateMovie)"></div>
+    <script src="js/movies/CreateMoviesPage.js"></script>
+    <script src="js/AdminsTemplates.js"></script>
+</head>
+<body class="bg-dark">
+<br>
+<div th:insert="admin/templates/AdminsTemplates::NavBarHorizontal"></div>
+<div class="bg-white container">
+    <div class="row">
+        <div th:insert="admin/templates/AdminsTemplates::NavBarVertical"></div>
+        <div class="col ">
+            <form id="mainForm">
+                <div class="row">
+                    <div class="col">
+                        <label for="moviesName">Название фильма: </label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <input class="form-control form-control-sm w-50" type="text" id="moviesName"
+                               name="moviesName" placeholder="Текст" th:value="${moviesName}" required>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col">
+                        <label>Тип фильма: </label>
+                    </div>
+                </div>
+
+                <div class="row mb-3" id="checkboxes">
+                    <div class="col">
+                        <div class="form-check form-check-inline d-inline">
+                            <input class="form-check-input" type="checkbox" id="checkboxType3D" name="moviesType"
+                                   value="3D">
+                            <label class="form-check-label" for="checkboxType3D">3D</label>
+                        </div>
+                        <div class="form-check form-check-inline d-inline">
+                            <input class="form-check-input" type="checkbox" id="checkboxType2D" name="moviesType"
+                                   value="2D">
+                            <label class="form-check-label" for="checkboxType2D">2D</label>
+                        </div>
+                        <div class="form-check form-check-inline d-inline">
+                            <input class="form-check-input" type="checkbox" id="checkboxTypeIMAX" name="moviesType"
+                                   value="IMAX">
+                            <label class="form-check-label" for="checkboxTypeIMAX">IMAX</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label for="moviesDescription">Описание: </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                            <textarea class="form-control" id="moviesDescription" name="moviesDescription" rows="10"
+                                      placeholder="Текст" th:text="${moviesDescription}" required></textarea>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-lg-2">
+                        <label for="mainImage" class="form-label">Главная картинка: </label>
+                    </div>
+
+                    <div class="col">
+                        <img class="img-thumbnail" th:src="${moviesMainImage}?: 'images/emptyImg.png'"
+                             id="mainImage"
+                             alt="default or upload img" width="80" height="80">
+                    </div>
+                </div>
+
+                <div class="row mt-3 ml-1">
+                    <div class="col-11">
+                        <label class="custom-file-label" for="uploadMainImg">Выберите изображение</label>
+                        <input type="file" class="custom-file-input" name="uploadMainImg" id="uploadMainImg"
+                               accept="image/*" required>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col">
+                        <label for="moviesName">Ссылка на трейлер: </label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <input class="form-control" type="url" id="trailerLink"
+                               name="trailerLink" placeholder="Ссылка" th:value="${moviesTrailerLink}" required>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col">
+                        <label>Галерея картинок: </label>
+                    </div>
+                </div>
+
+                <div class="row mt-1" style="height: 120px">
+                    <div class="col">
+                        <div class="custom-file" id="imagesGallery">
+                            <label for="addToGalleryPicture" id="labelForAddImageGallery">
+                                <img class="img-thumbnail mx-2 my-2" src="images/add.png" width="80"
+                                     height="80">
+                            </label>
+                            <input type="file" id="addToGalleryPicture" name="addToGalleryPicture"
+                                   accept="image/*" required hidden>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-1 mb-3">
+                    <div class="col d-flex justify-content-between">
+                        <button type="button" class="btn btn-success" id="save">Сохранить</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    let moviesId = "[[${moviesId}]]".replace(/[\[\]]/g, "");
+    if (moviesId.length > 1) {
+        moviesId = moviesId.split(",")
+    }
+
+    let pathToMainImage = "[[${moviesMainImage}]]".replace(/[\[\]]/g, "");
+    if (pathToMainImage.length > 1) {
+        pathToMainImage = pathToMainImage.split(",")
+    }
+
+    let pathToGalleryImages = "[[${moviesGallery}]]".replace(/[\[\]]/g, "");
+    if (pathToGalleryImages.length > 1) {
+        pathToGalleryImages = pathToGalleryImages.split(",")
+    }
+
+    let moviesTypes = "[[${moviesTypes}]]".replace(/[\[\]]/g, "");
+    if (moviesTypes.length > 1) {
+        moviesTypes = moviesTypes.split(",")
+    }
+</script>

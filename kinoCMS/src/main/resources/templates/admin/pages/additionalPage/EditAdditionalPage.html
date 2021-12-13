@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <div th:insert="admin/AdminCommonHeadTemplate::head(EditAdditionalPage)"></div>
+    <script src="js/AdminsTemplates.js"></script>
+    <script src="js/pages/additionalPage/EditAdditionalPage.js"></script>
+</head>
+
+<div th:insert="admin/pages/additionalPage/CreateAdditionalPage::additionalPagesEditor"></div>
+
+</html>
+
+<script>
+    let oldAdditionalPage = "[[${oldAdditionalPage}]]";
+    let oldImagesFromGallery = "[[${oldImagesFromGallery}]]";
+</script>

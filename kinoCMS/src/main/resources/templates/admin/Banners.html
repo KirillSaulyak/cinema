@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <div th:insert="admin/AdminCommonHeadTemplate::head(Banners)"></div>
+    <script src="js/mainPageBanners/TopBanners.js"></script>
+    <script src="js/mainPageBanners/BackgroundBanner.js"></script>
+    <script src="js/mainPageBanners/BottomBanners.js"></script>
+</head>
+<body class="bg-dark">
+
+<br>
+<div th:insert="admin/templates/AdminsTemplates::NavBarHorizontal"></div>
+<div class="bg-white container">
+    <div class="row">
+        <div th:insert="admin/templates/AdminsTemplates::NavBarVertical"></div>
+        <div class="col">
+            <div class="row mx-3 d-flex justify-content-center"><h1>На главной верх</h1></div>
+            <div class="row">
+                <span class="col border border-dark mx-1 my-1 pb-3">
+                    <div class="row">
+                        <div class="col">
+                            <div class="custom-control custom-switch d-flex justify-content-end">
+                                <input class="custom-control-input" id="enabledTopBanners" type="checkbox">
+                                <label class="custom-control-label" for="enabledTopBanners">Активен</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-1 ">
+                        <div class="col mb-2" id="imagesTopBannersGallery" style="height: 130px">
+                            <div class="custom-file">
+                                <label for="addToTopBannersGalleryPicture">
+                                    <img class="img-thumbnail mx-2 my-2" src="images/add.png"
+                                         style="height: 120px; max-width: 160px">
+                                </label>
+                                <input accept="image/*" hidden id="addToTopBannersGalleryPicture"
+                                       name="addToGalleryPicture" required type="file">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-3">
+                            <select class="custom-select" id="speedTopBanners">
+                                <option disabled selected>Выберите скорость смены баннеров</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-success" id="saveTopBanners" type="button">Сохранить</button>
+                        </div>
+                    </div>
+                </span>
+            </div>
+
+            <div class="row mx-3 d-flex justify-content-center"><h1>Фоновый баннер</h1></div>
+            <div class="row">
+                <span class="col border border-dark mx-1 my-1 pb-3">
+                    <div class="row">
+                        <div class="col">
+                            <div class="custom-control custom-switch d-flex justify-content-end">
+                                <input class="custom-control-input" id="enabledBackgroundBanner" type="checkbox">
+                                <label class="custom-control-label" for="enabledBackgroundBanner">Активен</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <img class="img-thumbnail" src="images/emptyImg.png" id="previewBackgroundBanner"
+                                 width="100" alt="Thumbnail image">
+                            <div class="custom-file w-50">
+                                <input class="custom-file-input" id="backgroundBanner" type="file">
+                                <label class="custom-file-label" for="backgroundBanner">Выберите изображение</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col d-flex justify-content-center">
+                            <button type="button" class="btn btn-success" id="saveBackgroundBanner">Сохранить</button>
+                        </div>
+                    </div>
+                </span>
+            </div>
+
+            <div class="row mx-3 d-flex justify-content-center"><h1>На главной новости и акции</h1></div>
+            <div class="row">
+                <span class="col border border-dark mx-1 mt-1 mb-3 pb-3">
+                    <div class="row">
+                        <div class="col">
+                            <div class="custom-control custom-switch d-flex justify-content-end">
+                                <input class="custom-control-input" id="enabledBottomBanners" type="checkbox">
+                                <label class="custom-control-label" for="enabledBottomBanners">Активен</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-1 mb-2">
+                        <div class="col" id="imageBottomBannersGallery" style="height: 130px">
+                            <div class="custom-file">
+                                <label for="addToBottomBannersGalleryPicture">
+                                    <img class="img-thumbnail mx-2 my-2" src="images/add.png"
+                                         style="height: 120px; max-width: 160px">
+                                </label>
+                                <input accept="image/*" hidden id="addToBottomBannersGalleryPicture"
+                                       name="addToGalleryPicture" required type="file">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-3">
+                            <select class="custom-select" id="speedBottomBanners">
+                                <option disabled selected>Выберите скорость смены баннеров</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-success" id="saveBottomBanners" type="button">Сохранить</button>
+                        </div>
+                    </div>
+                 </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+<script>
+    let oldTopBanner = "[[${oldTopBanners}]]";
+    let oldTopBannersSetting = "[[${oldTopBannersSetting}]]";
+
+    let oldBackgroundBannerSetting = "[[${backgroundBannerSetting}]]";
+
+    let oldBottomBanners = "[[${oldBottomBanners}]]";
+    let oldBottomBannersSetting = "[[${oldBottomBannersSetting}]]";
+</script>

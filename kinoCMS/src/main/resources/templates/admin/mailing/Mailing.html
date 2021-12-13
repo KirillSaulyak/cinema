@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <div th:insert="admin/AdminCommonHeadTemplate::head(ListUsers)"></div>
+    <script src="js/AdminsTemplates.js"></script>
+    <script src="js/mailing/Mailing.js"></script>
+</head>
+
+<body class="bg-dark">
+<br>
+<div th:insert="admin/templates/AdminsTemplates::NavBarHorizontal"></div>
+<div class="bg-white container">
+    <div class="row">
+        <div th:insert="admin/templates/AdminsTemplates::NavBarVertical"></div>
+        <div class="col ">
+            <div class="card my-3">
+                <div class="card-body">
+                    <div class="row mb-3" id="checkboxes">
+                        <div class="col">
+                            <p class="font-weight-normal">Выбрать пользователей кому слать:</p>
+
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="customRadioInline1" name="customRadioInline1"
+                                       class="custom-control-input">
+                                <label class="custom-control-label" for="customRadioInline1">Все пользователи</label>
+                            </div>
+
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="customRadioInline2" name="customRadioInline1"
+                                       class="custom-control-input">
+                                <label class="custom-control-label" for="customRadioInline2">Выборочно</label>
+                            </div>
+                        </div>
+
+                        <div class="col  mx-3 mt-3">
+                            <button type="button" class="btn btn-primary" name="mailingChoseUsers">Выбрать пользователей</button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="textSMS">Текст SMS: </label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <textarea class="form-control w-25" id="textSMS" name="textSMS" rows="10"
+                                      placeholder="Текст">
+                            </textarea>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3 ml-1">
+
+                        <div class="row my-3">
+                            <div class="col d-flex justify-content-between">
+                                <button type="button" class="btn btn-success" id="beginMailingSMS">Начать рассылку
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card my-3">
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col">
+                            <p class="font-weight-normal">Выбрать email кому слать:</p>
+
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="allUserEmail" name="UserEmail"
+                                       class="custom-control-input">
+                                <label class="custom-control-label" for="allUserEmail">Все пользователи</label>
+                            </div>
+
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="chooseUserEmail" name="UserEmail"
+                                       class="custom-control-input">
+                                <label class="custom-control-label" for="chooseUserEmail">Выборочно</label>
+                            </div>
+                        </div>
+
+                        <div class="col  mx-3 mt-3">
+                            <button type="button" class="btn btn-primary" name="mailingChoseUsers">Выбрать пользователей</button>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="textSMS">Загрузить письмо: </label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col">
+                            <div class="custom-file" id="validateUploadFile">
+                                <input type="file" class="custom-file-input" name="fileForMailing"
+                                       id="fileForMailing" accept=".html" required>
+                                <label class="custom-file-label" for="fileForMailing">Choose file</label>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <button type="button" class="btn btn-success" id="mailingUploadFile">Загрузить
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <p class="font-weight-normal" id="mailingInformationFileUploaded"></p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <p class="font-weight-normal">
+                                        Шаблон используемый в текущей рассылке:
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <p class="font-weight-normal" id="mailingUsingTemplate">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col">
+                            <table class="table ">
+                                <thead class="thead-light">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Список загруженных файлов</th>
+                                    <th>Last Name</th>
+                                </tr>
+                                </thead>
+
+                                <tbody id="entryIntoTheListMailingsFileTable">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3 ml-1">
+
+                        <div class="row my-3">
+                            <div class="col d-flex justify-content-between">
+                                <button type="button" class="btn btn-success" id="beginMailingEmail">Начать рассылку
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

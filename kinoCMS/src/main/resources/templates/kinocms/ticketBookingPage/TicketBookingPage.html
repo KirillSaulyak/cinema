@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <div th:insert="kinocms/UserTemplates::head(Poster)"></div>
+    <script src="kinocms/js/ticketBookingPage/TicketBookingPage.js"></script>
+</head>
+
+<body class="bg-dark" id="userBody">
+<br>
+
+<div th:insert="kinocms/UserTemplates::userHeader"></div>
+<div class="bg-white container">
+    <div class="row">
+        <div class="col">
+            <img src="kinocms/images/ticketBookingTopPosterHall.png" class="img-fluid" alt="Responsive image">
+        </div>
+    </div>
+
+    <div class="row mt-1 border-top border-dark">
+        <div class="col">
+            <h1 id="moviesName"></h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-auto">
+            <div class="row">
+                <div class="col-auto d-flex justify-content-start" style="height: 300px">
+                    <img class="img-thumbnail" id="moviesPoster" alt="Thumbnail image">
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <img src="kinocms/images/ticketBookingChoosePlace.png" class="img-fluid" alt="Responsive image">
+        </div>
+    </div>
+
+
+    <div class="row my-3  d-flex justify-content-center">
+        <div class="col-auto">
+            <button type="button" class="btn btn-info btn-lg">Забронировать</button>
+        </div>
+
+        <div class="col-auto">
+            <button type="button" class="btn btn-success btn-lg">Купить билет</button>
+        </div>
+    </div>
+
+    <div th:insert="kinocms/UserTemplates::footer"></div>
+</div>
+</body>
+</html>

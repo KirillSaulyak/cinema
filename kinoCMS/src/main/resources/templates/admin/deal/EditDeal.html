@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <div th:insert="admin/AdminCommonHeadTemplate::head(EditDeal)"></div>
+    <script src="js/AdminsTemplates.js"></script>
+    <script src="js/deal/EditDeal.js"></script>
+</head>
+
+<div th:insert="admin/deal/CreateDeal::dealsEditor"></div>
+
+</html>
+
+<script>
+    let oldDeal = "[[${oldDeal}]]";
+    let oldImagesFromGallery = "[[${oldImagesFromGallery}]]";
+</script>

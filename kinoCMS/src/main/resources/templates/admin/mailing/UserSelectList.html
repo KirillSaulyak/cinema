@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <div th:insert="admin/AdminCommonHeadTemplate::head(ListUsers)"></div>
+    <script src="js/AdminsTemplates.js"></script>
+    <script src="js/mailing/UserSelectList.js"></script>
+</head>
+
+<body class="bg-dark">
+<br>
+<div th:insert="admin/templates/AdminsTemplates::NavBarHorizontal"></div>
+<div class="bg-white container">
+    <div class="row">
+        <div th:insert="admin/templates/AdminsTemplates::NavBarVertical"></div>
+        <div class="col ">
+
+            <div class="row mx-3 justify-content-center"><h1>Список Пользователей</h1></div>
+
+            <div class="row mt-1">
+                <div class="col">
+                    <table class="table table-bordered">
+                        <thead class="thead-light">
+                        <tr>
+                            <th></th>
+                            <th>ID</th>
+                            <th>Дата регистрации</th>
+                            <th>День рождения</th>
+                            <th>Email</th>
+                            <th>Телефон</th>
+                            <th>ФИО</th>
+                            <th>Город</th>
+                        </tr>
+                        </thead>
+                        <tbody id="entryIntoTheListUsersTable">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row my-3">
+                <div class="col">
+                    <button type="button" class="btn btn-success" id="userSelectListchoose">Выбрать</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

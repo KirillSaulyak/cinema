@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <div th:insert="admin/AdminCommonHeadTemplate::head(CreateUser)"></div>
+    <script src="js/AdminsTemplates.js"></script>
+    <script src="js/users/CreateUser.js"></script>
+</head>
+
+<body class="bg-dark" th:fragment="usersEditor">
+<br>
+<div th:insert="admin/templates/AdminsTemplates::NavBarHorizontal"></div>
+<div class="bg-white container" id="container">
+    <div class="row">
+        <div th:insert="admin/templates/AdminsTemplates::NavBarVertical"></div>
+        <div class="col ">
+
+            <div class="row">
+                <div class="col">
+                    <label for="userFirstName">Имя: </label>
+                </div>
+
+                <div class="col">
+                    <label for="userLanguages">Язык </label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <input class="form-control form-control-sm w-75" type="text" id="userFirstName"
+                           name="userFirstName" placeholder="Текст" required>
+                </div>
+
+                <div class="col">
+                    <div class="form-check" id="userLanguages"></div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="userSecondName">Фамилия: </label>
+                </div>
+
+                <div class="col">
+                    <label for="userGenders">Пол: </label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <input class="form-control form-control-sm w-75" type="text" id="userSecondName"
+                           name="userSecondName" placeholder="Текст" required>
+                </div>
+
+                <div class="col">
+                    <div class="form-check" id="userGenders"></div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="userEmail">E-mail: </label>
+                </div>
+
+                <div class="col">
+                    <label for="userPhone">Телефон: </label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <input class="form-control form-control-sm w-75" type="email" id="userEmail"
+                           name="userEmail" placeholder="Текст" required>
+                </div>
+
+                <div class="col">
+                    <input class="form-control form-control-sm w-75" type="tel" id="userPhone"
+                           name="userPhone" placeholder="номер телефона" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="userAddress">Адресс: </label>
+                </div>
+
+                <div class="col">
+                    <label for="userDateOfBirth">Дата рождения: </label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <input class="form-control form-control-sm w-75" type="text" id="userAddress"
+                           name="userAddress" placeholder="Текст" required>
+                </div>
+
+                <div class="col">
+                    <input type="date" class="form-control" id="userDateOfBirth" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="userPassword">Пароль: </label>
+                </div>
+
+                <div class="col">
+                    <label for="userRepeatPassword">Повторить пароль: </label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <input class="form-control form-control-sm w-75" type="password" id="userPassword"
+                           name="userPassword" placeholder="Пароль" required>
+                </div>
+
+                <div class="col">
+                    <input class="form-control form-control-sm w-75" type="password" id="userRepeatPassword"
+                           name="userRepeatPassword" placeholder="Повторить пароль" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="userBankCard">Номер карты: </label>
+                </div>
+                <div class="col">
+                    <label for="listCities">Город: </label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <input class="form-control form-control-sm w-75" type="number" id="userBankCard"
+                           name="userBankCard" placeholder="Текст" required>
+                </div>
+
+                <div class="col">
+                    <select class="custom-select " id="listCities" autofocus required>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row my-3">
+                <div class="col">
+                    <button type="button" class="btn btn-success" id="saveUser">Сохранить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

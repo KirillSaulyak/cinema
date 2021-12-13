@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <div th:insert="admin/AdminCommonHeadTemplate::head(MoviesPage)"></div>
+    <script src="js/AdminsTemplates.js"></script>
+    <script src="js/movies/MoviesPage.js"></script>
+</head>
+<body class="bg-dark">
+    <br>
+    <div th:insert="admin/templates/AdminsTemplates::NavBarHorizontal"></div>
+    <div class="bg-white container">
+        <div class="row">
+            <div th:insert="admin/templates/AdminsTemplates::NavBarVertical"></div>
+            <div class="col">
+                <div class="row">
+                    <div class="col-2">
+                        <a th:href="${linkToCreateMoviesPage}">
+                            <img class="img-thumbnail mx-2 my-2" src="images/add.png" width="100" height="100">
+                        </a>
+                    </div>
+                </div>
+                    <div class="row mx-3"><h1>Скрытые фильмы</h1></div>
+                    <div class="row mx-3 my-3 border border-dark" id="HiddenMoviesList"></div>
+
+                    <div class="row mx-3"><h1>Текущие фильмы</h1></div>
+                    <div class="row mx-3 my-3 border border-dark" id="CurrentMoviesList"></div>
+                    <div class="row mx-3"><h1>Скоро покажут</h1></div>
+                    <div class="row mx-3 my-3 border border-dark" id="FutureMoviesList"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    let idHiddenMovies = "[[${idHiddenMovies}]]".replace(/[\[\]]/g, "").split(",");
+    let nameHiddenMovies = "[[${nameHiddenMovies}]]".replace(/[\[\]]/g, "");
+    let pathListImagesHiddenMovies = "[[${imageHiddenMovies}]]".replace(/[\[\]]/g, "");
+
+    let idCurrentMovies = "[[${idCurrentMovies}]]".replace(/[\[\]]/g, "").split(",");
+    let nameCurrentMovies = "[[${nameCurrentMovies}]]".replace(/[\[\]]/g, "");
+    let pathListImagesCurrentMovies = "[[${imageCurrentMovies}]]".replace(/[\[\]]/g, "");
+
+    let idFutureMovies = "[[${idFutureMovies}]]".replace(/[\[\]]/g, "").split(",");
+    let nameFutureMovies = "[[${nameFutureMovies}]]".replace(/[\[\]]/g, "");
+    let pathListImagesFutureMovies = "[[${imageFutureMovies}]]".replace(/[\[\]]/g, "");
+</script>

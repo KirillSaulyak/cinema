@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <div th:insert="admin/AdminCommonHeadTemplate::head(CreateDescriptionCurrentCinema)"></div>
+    <script src="js/AdminsTemplates.js"></script>
+    <script src="js/pages/DescriptionCurrentCinema.js"></script>
+</head>
+
+<body class="bg-dark">
+<br>
+<div th:insert="admin/templates/AdminsTemplates::NavBarHorizontal"></div>
+<div class="bg-white container" id="container">
+    <div class="row">
+        <div th:insert="admin/templates/AdminsTemplates::NavBarVertical"></div>
+        <div class="col ">
+            <div class="row">
+                <div class="col">
+                    <div class="custom-control custom-switch d-flex justify-content-end">
+                        <input class="custom-control-input" id="enabledDescriptionCurrentCinema" type="checkbox">
+                        <label class="custom-control-label" for="enabledDescriptionCurrentCinema">Активен</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="descriptionCurrentCinemaDescription">Описание: </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <textarea class="form-control" id="descriptionCurrentCinemaDescription" name="descriptionCurrentCinemaDescription" rows="10"
+                              placeholder="Текст" required></textarea>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-lg-2">
+                    <label for="mainImage" class="form-label">Главная картинка: </label>
+                </div>
+
+                <div class="col">
+                    <img class="img-thumbnail" src="images/emptyImg.png"
+                         id="mainImage"
+                         alt="default or upload img" width="80" height="80">
+                </div>
+            </div>
+
+            <div class="row mt-3 ml-1">
+                <div class="col-11">
+                    <input type="file" class="custom-file-input" name="uploadMainImage" id="uploadMainImage"
+                           accept="image/*" required>
+                    <label class="custom-file-label" for="uploadMainImage">Выберите изображение</label>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col">
+                    <label>Галерея картинок: </label>
+                </div>
+            </div>
+
+            <div class="row mt-1 mb-3 d-flex justify-content-start">
+                <div class="col-2 custom-file" style="height: 80px" id="imagesGallery">
+                    <label for="uploadImageToGallery" id="labelForAddImageGallery">
+                        <img class="img-thumbnail mx-2" src="images/add.png" width="80">
+                    </label>
+                    <input type="file" id="uploadImageToGallery" name="uploadImageToGallery"
+                           accept="image/*" hidden required>
+                    <div class="invalid-tooltip">
+                        Добавьте изображение в галерею
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-1 mb-3">
+                <div class="col d-flex justify-content-between">
+                    <button type="button" class="btn btn-success" id="saveDescriptionCurrentCinema">Сохранить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

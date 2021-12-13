@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <div th:insert="kinocms/UserTemplates::head(MainPage)"></div>
+    <script src="kinocms/js/mainPage/MainPageTopBanners.js"></script>
+    <script src="kinocms/js/mainPage/MainPageBottomBanners.js"></script>
+    <script src="kinocms/js/mainPage/MainPageMovies.js"></script>
+</head>
+
+<body class="bg-dark" id="userBody">
+<br>
+
+<div th:insert="kinocms/UserTemplates::userHeader"></div>
+<div class="bg-white container">
+    <div class="row">
+        <div class="col">
+            <div id="topBannersCarousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators" id="topBannersCarouselIndicators"></ol>
+
+                <div class="carousel-inner" role="listbox" id="topBannersCarouselItem"></div>
+
+                <a class="carousel-control-prev" href="#topBannersCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#topBannersCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row my-3">
+        <div class="col text-center">
+            <h2>Смотрите сегодня</h2>
+        </div>
+    </div>
+
+    <div class="row my-3" id="currentMovies"></div>
+
+    <div class="row my-3">
+        <div class="col text-center">
+            <h2>Смотрите Скоро</h2>
+        </div>
+    </div>
+
+    <div class="row" id="futureMovies"></div>
+
+    <div class="row my-3">
+        <div class="col">
+            <div id="bottomBannersCarousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators" id="bottomBannersCarouselIndicators"></ol>
+
+                <div class="carousel-inner" role="listbox" id="bottomBannersCarouselItem"></div>
+
+                <a class="carousel-control-prev" href="#bottomBannersCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#bottomBannersCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div th:insert="kinocms/UserTemplates::footer"></div>
+</div>
+</body>
+</html>

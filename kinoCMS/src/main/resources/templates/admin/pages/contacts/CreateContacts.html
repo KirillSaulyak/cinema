@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <div th:insert="admin/AdminCommonHeadTemplate::head(CreateContacts)"></div>
+    <script src="js/AdminsTemplates.js"></script>
+    <script src="js/pages/contacts/CreateContacts.js"></script>
+</head>
+
+<body class="bg-dark">
+<br>
+<div th:insert="admin/templates/AdminsTemplates::NavBarHorizontal"></div>
+<div class="bg-white container" id="container">
+    <div class="row">
+        <div th:insert="admin/templates/AdminsTemplates::NavBarVertical"></div>
+        <div class="col ">
+
+            <div class="row">
+                <div class="col">
+                    <label for="contactsCinemaName">Название кинотеатра: </label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <input class="form-control form-control-sm w-50" type="text" id="contactsCinemaName"
+                           name="contactsCinemaName" placeholder="Текст" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="contactsAddress">Адрес: </label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <textarea class="form-control" id="contactsAddress" name="contactsAddress" rows="10"
+                              placeholder="Текст" required></textarea>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label for="contactsMapCoordinate">Координаты для карты: </label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <input class="form-control form-control-sm w-50" type="text" id="contactsMapCoordinate"
+                           name="contactsMapCoordinate" placeholder="Текст" required>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-lg-2">
+                    <label for="mainImage" class="form-label">Главная картинка: </label>
+                </div>
+
+                <div class="col">
+                    <img class="img-thumbnail" src="images/emptyImg.png"
+                         id="mainImage"
+                         alt="default or upload img" width="80" height="80">
+                </div>
+            </div>
+
+            <div class="row mt-3 ml-1">
+                <div class="col-11">
+                    <input type="file" class="custom-file-input" name="uploadLogo" id="uploadLogo"
+                           accept="image/*" required>
+                    <label class="custom-file-label" for="uploadLogo">Выберите изображение</label>
+                </div>
+            </div>
+
+
+            <div class="row my-3">
+                <div class="col d-flex justify-content-between">
+                    <button type="button" class="btn btn-success" id="saveContact">Сохранить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

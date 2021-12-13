@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <div th:insert="kinocms/UserTemplates::head(MainPage)"></div>
+    <script src="kinocms/js/cafesPage/CafesPage.js"></script>
+</head>
+
+<body class="bg-dark" id="userBody">
+<br>
+
+<div th:insert="kinocms/UserTemplates::userHeader"></div>
+<div class="bg-white container">
+
+    <div class="row">
+        <div class="col d-flex justify-content-center" style="height: 300px">
+            <img class="img-fluid" width="2000" id="cafesPoster"
+                 alt="Responsive image">
+        </div>
+    </div>
+
+    <div class="row border-bottom border-dark">
+        <div class="col d-flex justify-content-center">
+            <h1 id="cafesName"></h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col  d-flex  justify-content-start">
+            <p class="font-weight-bolder" id="cafesDescription"></p>
+        </div>
+    </div>
+
+    <div class="row my-3" id="imagesFromGallery"></div>
+
+    <div class="row">
+        <div class="col  d-flex  justify-content-center">
+            <h3>Меню</h3>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col">
+            <table class="table table-bordered">
+                <thead class="thead-light">
+                <tr>
+                    <th>Head 1</th>
+                    <th>Head 2</th>
+                    <th>Head 3</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Cell 1</td>
+                    <td>Cell 2</td>
+                    <td>Cell 3</td>
+                    <td>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                            <label class="custom-control-label" for="customCheck1"></label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Cell 4</td>
+                    <td>Cell 5</td>
+                    <td>Cell 6</td>
+                    <td>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck2">
+                            <label class="custom-control-label" for="customCheck2"></label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Cell 7</td>
+                    <td>Cell 8</td>
+                    <td>Cell 9</td>
+                    <td>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio1"></label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Cell 10</td>
+                    <td>Cell 11</td>
+                    <td>Cell 12</td>
+                    <td>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadio2"></label>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div th:insert="kinocms/UserTemplates::footer"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <div th:insert="kinocms/UserTemplates::head(MainPage)"></div>
+    <script src="kinocms/js/additionalPagesPage/AdditionalPagesPage.js"></script>
+</head>
+
+<body class="bg-dark" id="userBody">
+<br>
+
+<div th:insert="kinocms/UserTemplates::userHeader"></div>
+<div class="bg-white container">
+
+    <div class="row">
+        <div class="col d-flex justify-content-center" style="height: 300px">
+            <img class="img-fluid" width="2000" id="additionalPagesPoster"
+                 alt="Responsive image">
+        </div>
+    </div>
+
+    <div class="row border-bottom border-dark">
+        <div class="col d-flex justify-content-center">
+            <h1 id="additionalPagesName"></h1>
+        </div>
+
+        <div class="col-auto d-flex justify-content-end" id="additionalPagesTypes">
+        </div>
+    </div>
+
+    <div class="row">
+
+
+        <div class="col  d-flex  justify-content-start">
+            <p class="font-weight-bolder" id="additionalPagesDescription"></p>
+        </div>
+    </div>
+
+
+    <div class="row my-3">
+        <div class="col" id="placeBuyTicketButton">
+        </div>
+    </div>
+
+    <div class="row my-3">
+        <div class="col">
+            <div id="additionalPagesCarousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators" id="additionalPagesCarouselIndicators"></ol>
+
+                <div class="carousel-inner" role="listbox" id="additionalPagesCarouselItem"></div>
+
+                <a class="carousel-control-prev" href="#additionalPagesCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#additionalPagesCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div th:insert="kinocms/UserTemplates::footer"></div>
+</div>
+</body>
+</html>

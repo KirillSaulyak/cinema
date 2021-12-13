@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <div th:insert="kinocms/UserTemplates::head(Poster)"></div>
+    <script src="kinocms/js/schedulePage/Schedule.js"></script>
+</head>
+
+<body class="bg-dark" id="userBody">
+<br>
+
+<div th:insert="kinocms/UserTemplates::userHeader"></div>
+<div class="bg-white container">
+    <div class="row">
+        <div class="col">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary" for="userMoviesType2D">
+                    <input type="checkbox" autocomplete="off" name="userMoviesType" id="userMoviesType2D"> 2D
+                </label>
+                <label class="btn btn-secondary" for="userMoviesType3D">
+                    <input type="checkbox" autocomplete="off" name="userMoviesType" id="userMoviesType3D"> 3D
+                </label>
+                <label class="btn btn-secondary" for="userMoviesTypeIMAX">
+                    <input type="checkbox" autocomplete="off" name="userMoviesType" id="userMoviesTypeIMAX"> IMAX
+                </label>
+            </div>
+
+            <table class="table">
+                <thead class="thead-light">
+                <tr>
+                    <th>Название фильма</th>
+                    <th>Форматы фильма</th>
+                </tr>
+                </thead>
+                <tbody id="movies"></tbody>
+            </table>
+
+        </div>
+    </div>
+    <div th:insert="kinocms/UserTemplates::footer"></div>
+</div>
+</body>
+</html>

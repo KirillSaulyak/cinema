@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <div th:insert="kinocms/UserTemplates::head(Poster)"></div>
+    <script src="kinocms/js/listCinemasPage/ListCinemasPage.js"></script>
+</head>
+
+<body class="bg-dark" id="userBody">
+<br>
+
+
+<div th:insert="kinocms/UserTemplates::userHeader"></div>
+<div class="bg-white container">
+    <div class="row d-flex justify-content-center">
+        <h1>Наши кинотеатры</h1>
+    </div>
+    <div class="row">
+        <div class="col-auto justify-content-center">
+            <div class="row my-3" id="cinemas"></div>
+        </div>
+    </div>
+    <div th:insert="kinocms/UserTemplates::footer"></div>
+</div>
+</body>
+</html>

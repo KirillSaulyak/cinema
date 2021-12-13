@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <div th:insert="admin/AdminCommonHeadTemplate::head(Cinemas)"></div>
+    <script src="js/cinemas/CinemasPage.js"></script>
+</head>
+
+<body class="bg-dark">
+<br>
+<div th:insert="admin/templates/AdminsTemplates::NavBarHorizontal"></div>
+<div class="bg-white container">
+    <div class="row">
+        <div th:insert="admin/templates/AdminsTemplates::NavBarVertical"></div>
+        <div class="col">
+            <div class="row mx-3 d-flex justify-content-center"><h1>Список кинотеатров</h1></div>
+            <div class="row">
+                <span class="col border border-dark mx-1 my-1 pb-3">
+                    <div class="col">
+                        <div class="row justify-content-start">
+                            <div id="linkToCreateCinema">
+                                <a th:href="${linkToCreateCinema}">
+                                    <img class="img-thumbnail mx-2 my-2" src="images/add.png" width="100">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+<script>
+    let cinemas = "[[${cinemas}]]";
+</script>

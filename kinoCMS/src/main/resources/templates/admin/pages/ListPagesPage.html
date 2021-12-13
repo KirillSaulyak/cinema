@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <div th:insert="admin/AdminCommonHeadTemplate::head(ListPages)"></div>
+    <script src="js/AdminsTemplates.js"></script>
+    <script src="js/pages/ListPagesPage.js"></script>
+</head>
+
+<body class="bg-dark">
+<br>
+<div th:insert="admin/templates/AdminsTemplates::NavBarHorizontal"></div>
+<div class="bg-white container">
+    <div class="row">
+        <div th:insert="admin/templates/AdminsTemplates::NavBarVertical"></div>
+        <div class="col ">
+
+            <div class="row mt-1 mr-2 justify-content-end">
+                <button type="button" class="btn btn-success" id="addPage">Добавить Страницу</button>
+            </div>
+
+            <div class="row mx-3 justify-content-center"><h1>Список Страниц</h1></div>
+
+            <div class="row mt-1">
+                <div class="col">
+                    <table class="table table-bordered">
+                        <thead class="thead-light">
+                        <tr>
+                            <th>Название</th>
+                            <th>Дата создания</th>
+                            <th>Статус</th>
+                            <th>Редактирование</th>
+                        </tr>
+                        </thead>
+                        <tbody id="entryIntoTheListPagesTable">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

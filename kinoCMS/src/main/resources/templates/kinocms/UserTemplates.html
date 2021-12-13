@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head(titleName)">
+    <title th:text="${titleName}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS (Cloudflare CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"
+          integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA=="
+          crossorigin="anonymous">
+    <!-- jQuery (Cloudflare CDN) -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+            integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+            crossorigin="anonymous"></script>
+    <!-- Bootstrap Bundle JS (Cloudflare CDN) -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"
+            integrity="sha512-wV7Yj1alIZDqZFCUQJy85VN+qvEIly93fIQAN7iqDFCPEucLCeNFz4r35FCo9s6WrpdDQPi80xbljXB8Bjtvcg=="
+            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!--Project`s files-->
+    <script src="kinocms/js/UserTemplates.js"></script>
+</head>
+
+<body>
+
+<div th:fragment="userHeader">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <img src="kinocms/images/socialMediaIcon.png" class="img-fluid" alt="Responsive image">
+            </div>
+            <div class="col">
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+
+            <div class="col-auto" id="userPhoneNumber"></div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-sm bg-light navbar-light container justify-content-between">
+        <a class="navbar-brand justify-content-center" href="kinocms"><img src="kinocms/images/logo.svg" alt="логотип">
+            KinoCMS</a>
+        <ul class="navbar-nav" id="userListNavBarsItems">
+            <li class="nav-item">
+                <a class="nav-link" href="poster">Афиша</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="schedule">Расписание</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="soon">Скоро</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cinemas">Кинотеатры</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="deals">Акции</a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Про нас
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="navbarDropdown">
+                    <a class="dropdown-item" href="about-cinema" name="linkAboutCinema">О кинотеатре</a>
+                    <a class="dropdown-item" href="list-news" name="linkNews">Новости</a>
+                    <a class="dropdown-item" href="cafe" name="linkCafe">Кафе</a>
+                    <a class="dropdown-item" href="vip-hall" name="linkVipHall">VIP-зал</a>
+                    <a class="dropdown-item" href="chilldrens-room" name="linkСhilldrensRoom">Детская комната</a>
+                    <a class="dropdown-item" href="advertisement" name="linkAdvertisement">Реклама</a>
+                    <a class="dropdown-item" href="contacts" name="linkContacts">Контакты</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<div th:fragment="footer">
+    <footer class="border-top border-dark container bg-light">
+        <div class="container p-4">
+            <div class="row d-flex justify-content-between">
+                <div class="col-auto">
+                    <img src="kinocms/images/footerMobilesApplications.png" class="img-fluid" alt="Responsive image">
+                </div>
+                <div class="col-auto col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">
+                        <a class="text-dark" href="poster">Афиша</a>
+                    </h5>
+
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a class="text-dark" href="schedule">Расписание</a>
+                        </li>
+                        <li>
+                            <a class="text-dark" href="soon">Скоро</a>
+                        </li>
+                        <li>
+                            <a class="text-dark" href="cinemas">Кинотеатры</a>
+                        </li>
+                        <li>
+                            <a class="text-dark" href="deals">Акции</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-auto  col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">
+                        <a class="text-dark" href="about-cinema" name="linkAboutCinema">О кинотеатре</a>
+                    </h5>
+                    <ul class="list-unstyled" id="footer">
+                        <li>
+                            <a class="text-dark" href="list-news" name="linkNews">Новости</a>
+                        </li>
+                        <li>
+                            <a class="text-dark" href="cafe" name="linkCafe">Кафе</a>
+                        </li>
+                        <li>
+                            <a class="text-dark" href="vip-hall" name="linkVipHall">VIP-зал</a>
+                        </li>
+                        <li>
+                            <a class="text-dark" href="chilldrens-room" name="linkСhilldrensRoom">Детская комната</a>
+                        </li>
+                        <li>
+                            <a class="text-dark" href="advertisement" name="linkAdvertisement">Реклама</a>
+                        </li>
+                        <li>
+                            <a class="text-dark" href="contacts" name="linkContacts">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>

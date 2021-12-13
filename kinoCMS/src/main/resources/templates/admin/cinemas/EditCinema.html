@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <div th:insert="admin/AdminCommonHeadTemplate::head(EditCinema)"></div>
+    <script src="js/cinemas/EditCinema.js"></script>
+</head>
+
+<body class="bg-dark">
+<br>
+
+<div class="modal" id="hallsModalWindow" tabindex="-1" role="dialog" aria-labelledby="hallsModalWindowLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="hallsModalWindowLabel">Добавление зала</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="bg-white container">
+                    <form id="modalItems">
+                        <div class="row">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="hallsName">Номер зала: </label>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <input class="form-control form-control-sm w-50" type="text" id="hallsName"
+                                               name="hallsName" placeholder="Текст" required>
+                                    </div>
+                                </div>
+
+                                <div class="row mt-3">
+                                    <div class="col">
+                                        <label for="hallsDescription">Описание: </label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                         <textarea class="form-control" id="hallsDescription" name="hallsDescription" rows="7"
+                                      placeholder="Текст" required></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="row mt-3">
+                                    <div class="col-lg-2">
+                                        <label for="hallsLayoutImage" class="form-label">Схема зала: </label>
+                                    </div>
+
+                                    <div class="col">
+                                        <img class="img-thumbnail" src="images/emptyImg.png"
+                                             id="hallsLayoutImage" name="mainImages"
+                                             alt="default or uploaded img" width="80">
+                                    </div>
+                                </div>
+
+                                <div class="row mt-3 ml-1">
+                                    <div class="col-11">
+                                        <label class="custom-file-label" for="uploadHallsLayoutImage">Выберите
+                                            изображение</label>
+                                        <input type="file" class="custom-file-input" name="uploadHallsLayoutImage"
+                                               id="uploadHallsLayoutImage"
+                                               accept="image/*" required>
+                                    </div>
+                                </div>
+
+                                <div class="row mt-3">
+                                    <div class="col-lg-2">
+                                        <label for="hallsTopBannerImage" class="form-label">Изображение верхнего
+                                            баннера: </label>
+                                    </div>
+
+                                    <div class="col">
+                                        <img class="img-thumbnail" src="images/emptyImg.png"
+                                             id="hallsTopBannerImage" name="mainImages"
+                                             alt="default or upload img" width="80">
+                                    </div>
+                                </div>
+
+                                <div class="row mt-3 ml-1">
+                                    <div class="col-11">
+                                        <label class="custom-file-label" for="uploadHallsTopBannerImage">Выберите
+                                            изображение</label>
+                                        <input type="file" class="custom-file-input" name="uploadCinemasTopBannerImage"
+                                               id="uploadHallsTopBannerImage"
+                                               accept="image/*" required>
+                                    </div>
+                                </div>
+
+                                <div class="row mt-3">
+                                    <div class="col">
+                                        <label>Галерея картинок: </label>
+                                    </div>
+                                </div>
+
+                                <div class="row mt-1">
+
+                                    <div class="custom-file-2" id="hallsImagesGallery" style="height: 120px">
+                                        <label for="addToHallsGalleryImage" id="labelForAddHallsImagesGallery">
+                                            <img class="img-thumbnail mx-2 my-2" src="images/add.png" width="80">
+                                        </label>
+                                        <input type="file" id="addToHallsGalleryImage" name="addToHallsGalleryImage"
+                                               accept="image/*" hidden>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" id="saveHall">Сохранить</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:insert="admin/templates/AdminsTemplates::NavBarHorizontal"></div>
+<div class="bg-white container">
+    <div class="row">
+        <div th:insert="admin/templates/AdminsTemplates::NavBarVertical"></div>
+        <div class="col">
+            <div class="row mt-3">
+                <div class="col">
+                    <label for="cinemasName">Название кинотеатра: </label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <input class="form-control form-control-sm w-50" type="text" id="cinemasName"
+                           name="cinemasName" placeholder="Текст" required>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col">
+                    <label for="cinemasDescription">Описание: </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                            <textarea class="form-control" id="cinemasDescription" name="cinemasDescription" rows="7"
+                                      placeholder="Текст" required></textarea>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col">
+                    <label for="cinemasСonditions">Условия: </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                            <textarea class="form-control" id="cinemasСonditions" name="cinemasСonditions" rows="7"
+                                      placeholder="Текст" required></textarea>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-lg-2">
+                    <label for="cinemasLogoImage" class="form-label">Логотип: </label>
+                </div>
+
+                <div class="col">
+                    <img class="img-thumbnail" src="images/emptyImg.png"
+                         id="cinemasLogoImage"
+                         alt="default or uploaded img" width="80" height="80">
+                </div>
+            </div>
+
+            <div class="row mt-3 ml-1">
+                <div class="col-11">
+                    <label class="custom-file-label" for="uploadCinemasLogoImage">Выберите изображение</label>
+                    <input type="file" class="custom-file-input" name="uploadCinemasLogoImage"
+                           id="uploadCinemasLogoImage"
+                           accept="image/*" required>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-lg-2">
+                    <label for="cinemasTopBannerImage" class="form-label">Изображение верхнего баннера: </label>
+                </div>
+
+                <div class="col">
+                    <img class="img-thumbnail" src="images/emptyImg.png"
+                         id="cinemasTopBannerImage"
+                         alt="default or upload img" width="80" height="80">
+                </div>
+            </div>
+
+            <div class="row mt-3 ml-1">
+                <div class="col-11">
+                    <label class="custom-file-label" for="uploadCinemasTopBannerImage">Выберите изображение</label>
+                    <input type="file" class="custom-file-input" name="uploadCinemasTopBannerImage"
+                           id="uploadCinemasTopBannerImage"
+                           accept="image/*" required>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col">
+                    <label>Галерея картинок: </label>
+                </div>
+            </div>
+
+            <div class="row mt-1 d-flex justify-content-start">
+                <div class="col-2 custom-file" style="height: 120px" id="cinemasImagesGallery">
+                    <label for="addToCinemasGalleryImages">
+                        <img class="img-thumbnail mx-2 my-2" src="images/add.png" width="80">
+                    </label>
+                    <input type="file" id="addToCinemasGalleryImages" name="addToCinemasGalleryImages"
+                           accept="image/*" hidden>
+                </div>
+            </div>
+
+            <div class="d-none" id="hallsTool">
+                <div class="row mt-1" id="divHallsTable">
+                    <div class="col">
+                        <table class="table table-bordered">
+                            <thead class="thead-light">
+                            <tr>
+                                <th>Название</th>
+                                <th>Дата создания</th>
+                                <th>Редактирование</th>
+                            </tr>
+                            </thead>
+                            <tbody id="entryIntoTheHallsTable">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row mt-3" id="divAddCinemasHall">
+                    <div class="col d-flex justify-content-center">
+                        <button type="button" class="btn btn-info" id="addCinemasHall" data-toggle="modal"
+                                data-target="#hallsModalWindow">
+                            Добавить зал
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row my-3">
+                <div class="col">
+                    <button type="button" class="btn btn-success" id="saveCinema">Сохранить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    let cinema = "[[${cinema}]]";
+    let cinemasImagesFromGallery = "[[${imagesFromGallery}]]";
+    let halls = "[[${halls}]]";
+    let hallsImagesFromGallery = "[[${hallsImagesFromGallery}]]";
+</script>

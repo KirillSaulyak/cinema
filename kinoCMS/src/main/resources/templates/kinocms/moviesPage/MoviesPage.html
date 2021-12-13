@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <div th:insert="kinocms/UserTemplates::head(MainPage)"></div>
+    <script src="kinocms/js/moviesPage/MoviesPage.js"></script>
+</head>
+
+<body class="bg-dark" id="userBody">
+<br>
+
+<div th:insert="kinocms/UserTemplates::userHeader"></div>
+<div class="bg-white container">
+
+    <div class="row">
+        <div class="embed-responsive embed-responsive-16by9 col" style="height: 300px">
+            <iframe class="embed-responsive-item" id="moviesTrailer" allowfullscreen=""></iframe>
+        </div>
+    </div>
+
+    <div class="row border-bottom border-dark">
+        <div class="col d-flex justify-content-center">
+            <h1 id="moviesName"></h1>
+        </div>
+
+        <div class="col-auto d-flex justify-content-end" id="moviesTypes">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-auto">
+            <div class="row">
+                <div class="col-auto d-flex justify-content-start" style="height: 300px">
+                    <img class="img-thumbnail" id="moviesPoster" alt="Thumbnail image">
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-auto d-flex justify-content-start">
+                    <img class="img-thumbnail" src="/kinocms/images/moviesInformation.png" alt="Thumbnail image">
+                </div>
+            </div>
+        </div>
+
+        <div class="col  d-flex  justify-content-start">
+            <p class="font-weight-bolder" id="moviesDescription"></p>
+        </div>
+    </div>
+
+
+
+    <div class="row my-3">
+        <div class="col" id="placeBuyTicketButton">
+        </div>
+    </div>
+
+    <div class="row my-3">
+        <div class="col">
+            <div id="moviesCarousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators" id="moviesCarouselIndicators"></ol>
+
+                <div class="carousel-inner" role="listbox" id="moviesCarouselItem"></div>
+
+                <a class="carousel-control-prev" href="#moviesCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#moviesCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div th:insert="kinocms/UserTemplates::footer"></div>
+</div>
+</body>
+</html>
